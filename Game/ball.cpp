@@ -10,3 +10,11 @@ Ball::Ball(sf::Vector2f startPosition, float ballRadius, sf::Color ballColor) :
 void Ball::draw(sf::RenderWindow& window) const {
     window.draw(ballShape);
 }
+
+sf::Vector2f Ball::getPosition() const {
+    return ballShape.getPosition();
+}
+
+Ball::~Ball()
+{
+}
