@@ -39,7 +39,7 @@ void Grid::DrawGrid(sf::RenderWindow& window) const
 {
 	sf::RectangleShape cell;
 	std::vector<sf::Color> colors = GetCellColors();
-	cell.setSize(sf::Vector2f(cellSize, cellSize));
+	cell.setSize(sf::Vector2f(cellSize-1, cellSize-1));
 	for (int i = 0; i < numRows; i++)
 	{
 		for (int j = 0; j < numCols; j++)

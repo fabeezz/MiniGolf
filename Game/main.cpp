@@ -5,7 +5,7 @@
 #include "level.h"
 
 constexpr int vmWIDTH = 1100, vmHEIGHT = 1100;
-constexpr int ballRadius = 15;
+constexpr float ballRadius = 15;
 
 int main()
 {
@@ -22,14 +22,11 @@ int main()
     grid.Initialize(level1);
     //grid.PrintGrid();
     
-    Ball ball = Ball({ 505, 300 }, ballRadius , sf::Color::White);
+    Ball ball = Ball({ 520, 220 }, ballRadius , sf::Color::White);
 
-    sf::Vector2f ballPosition = ball.getPosition(); //ball's position
-    //std::cout << "Ball pos: "<<ballPosition.x << " " << ballPosition.y << std::endl;
-    std::pair<int, int> ballOnGridPosition = grid.getGridPosition(ballPosition);
-    //std::cout << "Ball pos on grid: " << ballOnGridPosition.first << " " << ballOnGridPosition.second << std::endl;
-    std::cout << "Ball is on the cell with number: " << 
-        grid.getCellValue(ballOnGridPosition.second, ballOnGridPosition.first) << std::endl;
+    ball.checkCollision(grid);
+
+    std::cout << "Ball is on value: " << ball.getPositionOnGrid(grid, ballRadius, 0);
 
     while (window.isOpen())
     {
@@ -41,8 +38,6 @@ int main()
         }
         //std::cout << sf::Mouse::getPosition(window).x <<" "<< sf::Mouse::getPosition(window).y<< std::endl;
         window.clear(sf::Color::Black);
-        
-
 
         grid.DrawGrid(window);
         ball.draw(window);
