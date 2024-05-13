@@ -11,6 +11,18 @@ Grid::Grid()
 	cellSize = 50;
 }
 
+Grid Grid::getGrid()
+{
+	return Grid();
+}
+
+int Grid::getCellSize() const
+{
+	return this->cellSize;
+}
+
+
+
 void Grid::Initialize(Level& level)
 {
 	std::vector<int> info = level.getLevelData();
@@ -35,16 +47,18 @@ void Grid::PrintGrid()
 	}
 }
 
-void Grid::DrawGrid(sf::RenderWindow& window) const
+void Grid::DrawGrid(sf::RenderWindow& window)
 {
 	sf::RectangleShape cell;
 	std::vector<sf::Color> colors = GetCellColors();
-	cell.setSize(sf::Vector2f(cellSize - 1, cellSize - 1));
+	cell.setSize(sf::Vector2f(cellSize, cellSize));
 	for (int i = 0; i < numRows; i++)
 	{
 		for (int j = 0; j < numCols; j++)
 		{
 			int cellValue = table[i][j];
+			if (cellValue == 1 || cellValue == 2)
+				obstacles.push_back(cell);
 			cell.setPosition(j * cellSize + 50, i * cellSize + 50);
 			cell.setFillColor(colors[cellValue]);
 			window.draw(cell);

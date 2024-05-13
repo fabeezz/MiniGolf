@@ -10,6 +10,7 @@ constexpr float ballRadius = 15;
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(vmWIDTH, vmHEIGHT), "MiniGolf");
+	window.setFramerateLimit(60);
 	sf::Time dt;
 	sf::Clock clock;
 
@@ -24,11 +25,11 @@ int main()
 	grid.Initialize(level1);
 	//grid.PrintGrid();
 
-	Ball ball = Ball({ 520, 220 }, ballRadius, sf::Color::White);
+	Ball ball = Ball({ 500, 300 }, ballRadius, sf::Color::White);
 
-	std::cout << ball.collisionEast(grid);
+	//std::cout << ball.collisionEast(grid);
 
-	//std::cout << "Ball is on value: " << ball.getPositionOnGrid(grid, ballRadius, 0);
+	std::cout << "Ball is on value: " << ball.getPositionOnGrid(grid, ballRadius, 0);
 
 	while (window.isOpen())
 	{
@@ -50,10 +51,9 @@ int main()
 		window.clear(sf::Color::Black);
 
 		grid.DrawGrid(window);
-		ball.checkCollision(grid);
-		ball.update(dt);
-		ball.draw(window);
 
+		ball.update(dt, grid);
+		ball.draw(window);
 
 		window.display();
 	}
