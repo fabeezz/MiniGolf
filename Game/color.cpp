@@ -2,5 +2,5 @@
 
 std::vector<sf::Color> GetCellColors()
 {
-    return { gCourse,bLimit,lbObstacle,bWater };
+	return { gCourse,bLimit,lbObstacle,bWater };
 }

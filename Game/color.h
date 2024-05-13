@@ -1,6 +1,6 @@
 #pragma once
-#include <vector>
 #include <SFML/Graphics.hpp>
+#include <vector>
 
 const sf::Color gCourse(0, 145, 112); //course's green grass
 const sf::Color bLimit(139, 69, 19); // course's limit

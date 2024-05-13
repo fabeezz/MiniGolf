@@ -1,8 +1,8 @@
-#include "grid.h"
 #include "color.h"
+#include "grid.h"
 #include <iostream>
-#include <vector>
 #include <SFML/Graphics.hpp>
+#include <vector>
 
 Grid::Grid()
 {
@@ -39,13 +39,13 @@ void Grid::DrawGrid(sf::RenderWindow& window) const
 {
 	sf::RectangleShape cell;
 	std::vector<sf::Color> colors = GetCellColors();
-	cell.setSize(sf::Vector2f(cellSize-1, cellSize-1));
+	cell.setSize(sf::Vector2f(cellSize - 1, cellSize - 1));
 	for (int i = 0; i < numRows; i++)
 	{
 		for (int j = 0; j < numCols; j++)
 		{
 			int cellValue = table[i][j];
-			cell.setPosition(j * cellSize+50, i * cellSize+50);
+			cell.setPosition(j * cellSize + 50, i * cellSize + 50);
 			cell.setFillColor(colors[cellValue]);
 			window.draw(cell);
 		}
