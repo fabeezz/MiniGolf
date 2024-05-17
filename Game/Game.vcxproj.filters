@@ -18,13 +18,16 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ball.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="grid.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="color.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hole.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="level.cpp">
@@ -32,13 +35,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ball.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="grid.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="color.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hole.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="level.h">

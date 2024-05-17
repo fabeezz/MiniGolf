@@ -1,20 +1,12 @@
 #pragma once
+#include "hole.h"
+#include "tile.h"
+#include <SFML/Graphics.hpp>
 #include <vector>
-#include <string>
 
-class Level
-{
-private:
-	std::string levelName;
-	std::string levelFile;
-	std::vector<int> data;
+constexpr float h_radius = 20;
 
-public:
-	Level(const std::string& levelName, const std::string& levelFile);
-	std::string getLevelName() const;
-	std::string getLevelFile() const;
-	std::vector<int> getLevelData() const;
-	void CreateLevel();
-	void PrintLevel(Level &level);
-};
-
+void loadTexture(sf::Texture& tex_, std::string path_);
+std::vector<Tile> loadObstacles(int level);
+std::vector<std::vector<Tile>> loadWater(int level);
+std::vector<Hole> loadHole(int level);

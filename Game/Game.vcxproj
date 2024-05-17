@@ -133,17 +133,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ball.cpp" />
     <ClCompile Include="color.cpp" />
-    <ClCompile Include="grid.cpp" />
+    <ClCompile Include="entity.cpp" />
+    <ClCompile Include="hole.cpp" />
     <ClCompile Include="level.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="tile.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ball.h" />
     <ClInclude Include="color.h" />
-    <ClInclude Include="grid.h" />
+    <ClInclude Include="entity.h" />
+    <ClInclude Include="hole.h" />
     <ClInclude Include="level.h" />
+    <ClInclude Include="tile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
