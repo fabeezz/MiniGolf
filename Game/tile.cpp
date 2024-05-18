@@ -6,7 +6,13 @@ Tile::Tile(sf::Vector2f pos_, sf::Texture& tex_, sf::Vector2f size_) : Entity(po
 	tileShape.setTexture(&tex_);
 }
 
-sf::RectangleShape Tile::getRectShape()
+Tile::Tile(sf::Vector2f pos_, sf::Texture& tex_, float squareSize_) : Entity(pos_, tex_), size {squareSize_, squareSize_} {
+	tileShape.setPosition(pos_);
+	tileShape.setSize(size);
+	tileShape.setTexture(&tex_);
+}
+
+sf::RectangleShape& Tile::getRectShape()
 {
 	return tileShape;
 }

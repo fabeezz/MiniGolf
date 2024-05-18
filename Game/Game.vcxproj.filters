@@ -33,6 +33,12 @@
     <ClCompile Include="level.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ball.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="textures.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="color.h">
@@ -50,5 +56,34 @@
     <ClInclude Include="level.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ball.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="textures.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\textures\holeTX.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\textures\obstacleTX.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\textures\waterTX_d.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\textures\waterTX_l.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\textures\waterTX_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\textures\waterTX_u.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

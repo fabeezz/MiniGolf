@@ -1,12 +1,17 @@
 #pragma once
 #include "hole.h"
 #include "tile.h"
+#include "window.h"
+#include "ball.h"
+#include "textures.h"
 #include <SFML/Graphics.hpp>
 #include <vector>
 
-constexpr float h_radius = 20;
+constexpr float holeRad = 20;
 
-void loadTexture(sf::Texture& tex_, std::string path_);
+//-------------------------------------------------------------
+
 std::vector<Tile> loadObstacles(int level);
 std::vector<std::vector<Tile>> loadWater(int level);
 std::vector<Hole> loadHole(int level);
+std::vector<Ball> loadBall(int level);

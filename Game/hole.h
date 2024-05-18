@@ -5,8 +5,8 @@
 class Hole : public Entity
 {
 public:
-	Hole(sf::Vector2f pos_, sf::Texture tex_, float h_radius_);
-	sf::CircleShape getCircShape();
+	Hole(sf::Vector2f pos_, sf::Texture& tex_, float h_radius_);
+	sf::CircleShape& getHoleShape();
 
 private:
 	sf::CircleShape holeShape;
