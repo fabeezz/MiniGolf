@@ -1,12 +1,13 @@
 #include "level.h"
 #include <iostream>
 
-constexpr float obst32 = 32;
-constexpr float obst64 = 64;
-constexpr float obst128 = 128;
+constexpr float obst64X = 64.0f;
+constexpr float obst128X = 128.0f;
+constexpr float obst64Y = 67.0f;
+constexpr float obst128Y = 131.0f;
 
-sf::Vector2f vect128 = { 128, 131 };
-sf::Vector2f vect64 = { 64, 67 };
+sf::Vector2f vect128 = { 128.0f, 131.0f };
+sf::Vector2f vect64 = { 64.0f, 67.0f };
 
 //-----------------------------------------------------------------------------------
 
@@ -18,15 +19,15 @@ std::vector<Tile> loadObstacles(int level)
 	   960
 		|
 	*/
-	std::vector<Tile> obstacles;
+	std::vector<Tile> obstacles = {};
 
 	switch (level)
 	{
 	case 1:
-		obstacles.push_back(Tile({ 0, (vmHEIGHT - obst128) / 2 }, obstacleTX, vect128));
-		obstacles.push_back(Tile({ vmWIDTH - obst128, (vmHEIGHT - obst128) / 2 }, obstacleTX, { obst128, obst128 + 3 }));
-		obstacles.push_back(Tile({ obst128, (vmHEIGHT - obst128) / 2 }, obstacleTX, obst128));
-		obstacles.push_back(Tile({ vmWIDTH - 2 * obst128, (vmHEIGHT - obst128) / 2 }, obstacleTX, obst128));
+		obstacles.push_back(Tile({ 0, (vmHEIGHT - vect128.y) / 2 }, obstacleTX, vect128));
+		obstacles.push_back(Tile({ vmWIDTH - vect128.x, (vmHEIGHT - obst128Y) / 2 }, obstacleTX, vect128));
+		obstacles.push_back(Tile({ obst128X, (vmHEIGHT - vect128.y) / 2 }, obstacleTX, vect128));
+		obstacles.push_back(Tile({ vmWIDTH - 2 * obst128X, (vmHEIGHT - obst128Y) / 2 }, obstacleTX, vect128));
 
 		break;
 
@@ -41,10 +42,10 @@ std::vector<Tile> loadObstacles(int level)
 
 std::vector<std::vector<Tile>> loadWater(int level)
 {
-	std::vector<Tile> w_l;
-	std::vector<Tile> w_r;
-	std::vector<Tile> w_u;
-	std::vector<Tile> w_d;
+	std::vector<Tile> w_l = {};
+	std::vector<Tile> w_r = {};
+	std::vector<Tile> w_u = {};
+	std::vector<Tile> w_d = {};
 
 	switch (level)
 	{
@@ -67,8 +68,8 @@ std::vector<std::vector<Tile>> loadWater(int level)
 
 std::vector<Hole> loadHole(int level)
 {
-	std::vector<Hole> holes;
-
+	std::vector<Hole> holes = {};
+	float holeRad = 20;
 	switch (level)
 	{
 	case 1:

@@ -9,11 +9,6 @@
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode((int)vmWIDTH, (int)vmHEIGHT), "MiniGolf");
-	//window.setFramerateLimit(60);
-	sf::Time dt;
-	sf::Clock clock;
-
 	initializeTextures();
 	int level = 1;
 	std::vector<Tile> obstacles = loadObstacles(level);
@@ -22,7 +17,7 @@ int main()
 	Ball ball = loadBall(level)[0];
 	while (window.isOpen())
 	{
-		dt = clock.restart();
+		dt = gameClock.restart();
 		sf::Event event;
 
 		while (window.pollEvent(event))
@@ -40,9 +35,9 @@ int main()
 
 		for (Tile& obstacle : obstacles)
 			window.draw(obstacle.getRectShape());
-		//for (std::vector<Tile>& flow : water)
-			//for (Tile& water_tile : flow)
-				//window.draw(water_tile.getRectShape());
+		for (std::vector<Tile>& flow : water)
+			for (Tile& water_tile : flow)
+				window.draw(water_tile.getRectShape());
 		for (Hole& hole : holes) {
 			window.draw(hole.getHoleShape());
 		}

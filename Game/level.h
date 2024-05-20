@@ -1,13 +1,10 @@
 #pragma once
-#include "hole.h"
-#include "tile.h"
-#include "window.h"
 #include "ball.h"
 #include "textures.h"
+#include "window.h"
+#include <math.h>
 #include <SFML/Graphics.hpp>
 #include <vector>
-
-constexpr float holeRad = 20;
 
 //-------------------------------------------------------------
 

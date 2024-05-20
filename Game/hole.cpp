@@ -10,3 +10,8 @@ sf::CircleShape& Hole::getHoleShape()
 {
 	return holeShape;
 }
+
+float Hole::getHoleRad()
+{
+	return h_radius;
+}
